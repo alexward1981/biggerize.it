@@ -1,0 +1,245 @@
+/********************************************/
+/* Biggerize.it                             */
+/* Created in 2014 by Alexander Ward        */
+/* Feel free to fork this code, I will even */
+/* accept pull request if they are worthy   */
+/* additions. Please review the rules below */
+/********************************************/
+/* Notice to code modifiers */
+/* The code is split into sections and is written in the SASS language.
+/* Please do not edit a .css file directly as these changes will be overwritten.
+/* There is a section of the css called 'classes', this is the only place the
+/* !important declaration will be tolerated, please do not use it anywhere else.
+
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,800);
+
+/* Modified YUI2 Reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset, img {
+  border: 0; }
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal; }
+
+ol, ul {
+  list-style: none; }
+
+caption, th {
+  text-align: left; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+q:before, q:after {
+  content: ''; }
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: #990000; }
+
+abbr, acronym {
+  border: 0; }
+
+input, textarea {
+  -webkit-appearance: none; }
+
+header, article, section, nav, figure, aside, hgroup, footer {
+  display: block; }
+
+body, html {
+  height: 100%;
+  font-family: 'Raleway', Helvetica,Arial,sans-serif; }
+
+strong {
+  font-weight: bold; }
+
+/* Classes */
+.hidden {
+  display: none !important; }
+
+.normal {
+  font-weight: normal !important; }
+
+.italic {
+  font-weight: normal !important;
+  font-style: italic; }
+
+.italic-bold {
+  font-style: italic; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.error {
+  width: 86.7%;
+  padding: 1em 0;
+  margin: 1em auto;
+  color: #fff;
+  background-color: #990000; }
+
+/* Direct access page */
+.direct-access {
+  padding: 0.5em;
+  text-align: center; }
+  .direct-access h1 {
+    line-height: 1;
+    font-weight: bold; }
+
+/* Static content pages */
+.default-page {
+  width: 1000px;
+  margin: 0 auto;
+  height: 92%;
+  padding: 2%;
+  overflow-y: auto; }
+  .default-page header a {
+    color: #000; }
+    .default-page header a:hover {
+      color: #990000; }
+  .default-page h1 {
+    width: 75%;
+    font-size: 150px;
+    font-weight: bold;
+    line-height: 1;
+    padding-left: 15%;
+    margin: 0 auto 0.5em;
+    background-image: url("/static/images/logo-hires.png");
+    background-repeat: no-repeat;
+    background-position: 50% left;
+    -webkit-background-size: contain;
+    background-size: contain; }
+  .default-page .notify {
+    padding: 1em;
+    background-color: #F0F0F0; }
+  .default-page p {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 1em; }
+  .default-page dl {
+    margin-bottom: 1em; }
+    .default-page dl dt {
+      margin: 0.5em 0;
+      font-size: 1.5em; }
+    .default-page dl dd {
+      margin-bottom: 0.2em; }
+  .default-page form {
+    padding: 1em;
+    text-align: center; }
+    .default-page form input {
+      padding: 1em;
+      display: block;
+      width: 40%;
+      margin: 0.5em auto;
+      font-size: 2em; }
+      .default-page form input[type="text"] {
+        width: 80%;
+        border: 0;
+        color: #666;
+        background-color: #f1f1f1; }
+        .default-page form input[type="text"]:focus {
+          outline: 0;
+          background-color: #eaeaea; }
+      .default-page form input[type="submit"] {
+        border: 0;
+        background-color: #990000;
+        color: #fff;
+        text-transform: uppercase;
+        cursor: pointer; }
+        .default-page form input[type="submit"]:hover {
+          background-color: #aa0101; }
+    .default-page form .options {
+      margin: 1em 0; }
+      .default-page form .options label {
+        font-size: 1em;
+        display: block;
+        margin-bottom: 0.6em; }
+      .default-page form .options select {
+        border: 0;
+        padding: 6px 30px 6px 10px;
+        background-color: #f1f1f1;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        text-indent: 0.01px;
+        text-overflow: '';
+        background-image: url("/static/images/dropdown.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+        background-size: 12%; }
+        .default-page form .options select::-ms-expand {
+          display: none; }
+      .default-page form .options option {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        box-shadow: none;
+        display: block;
+        background-color: #f1f1f1;
+        border: 0;
+        padding: 0 10px; }
+
+/* Site footer */
+footer {
+  width: 98%;
+  height: 20px;
+  padding: 0.5em 1%;
+  overflow: hidden; }
+
+/* Responsive */
+@media only screen and (max-width: 1000px) {
+  .default-page {
+    width: 100%; }
+    .default-page h1 {
+      font-size: 100px; }
+    .default-page p, .default-page dl {
+      margin-left: 1em;
+      margin-right: 1em; } }
+@media only screen and (max-width: 860px) {
+  .default-page h1 {
+    font-size: 100px; }
+  .default-page p {
+    font-size: 1.5em; }
+  .default-page form input[type="text"] {
+    font-size: 1.5em; } }
+@media only screen and (max-width: 690px) {
+  .default-page {
+    width: 100%;
+    padding: 0; }
+    .default-page h1 {
+      width: 60%;
+      margin: 0.5em auto;
+      font-size: 80px; }
+    .default-page p {
+      font-size: 1.2em; }
+    .default-page form {
+      padding: 0; }
+      .default-page form input[type="text"], .default-page form input[type="submit"] {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 1.2em; } }
+@media only screen and (max-width: 550px) {
+  .default-page h1 {
+    font-size: 50px; }
+  .default-page p {
+    font-size: 1em; }
+  .default-page form input[type="text"] {
+    font-size: 1.2em; } }
+@media only screen and (max-width: 450px) {
+  .default-page h1 {
+    font-size: 40px; }
+  .default-page p {
+    font-size: 1em; } }
